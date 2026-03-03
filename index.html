@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Rumeysa Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <span><a href="#home">HOME</a></span>
+      <a href="#about">ABOUT</a>
+      <a href="#projects">PROJECTS</a>
+      <a href="#contact">CONTACT</a>
+    </nav>
+  </header>
+    <section id="home">
+        <img src="mohammad-rahmani-0JvWk8ox_rQ-unsplash.jpg" alt="" >
+         <h2>I <span style="color: chartreuse;">'</span> M <br>
+        RUMEYSA <br>
+        İHTİYAR.</h2>
+       <span><p>UX/UI DESIGNER & WEB</p></span>
+      
+    </section>
+  <section id="about">
+    
+        <div class="cardd">
+       <p>HELLO, I'M RUMEYSA İHTİYAR. I WORK İN UI/UX DESİGN AND WEB DEVELOPMENT. I ENJOY CREATİNG USER-CENTERED DESİGNS AND DEVELOPİNG MODERN, FUNCTİONAL WEB İNTERFACES. WİTH THE EXPERİENCE I’VE GAİNED FROM VARİOUS PROJECTS, I PROVİDE SOLUTİONS THAT COMBİNE AESTHETİCS AND USABİLİTY. FEEL FREE TO REACH OUT TO ME FOR ANY WEB OR DESİGN NEEDS.</p>
+
+       <a href="">
+        <button>DOWNLOAD CV</button>
+       </a>
+      </div>
+        <h1 class="professional">
+            <span class="number">01</span> PROFESSIONAL</h1>
+            <h2 class="knowledge">MY KNOWLEDGE LEVEL IN SOFTWARE</h2>
+            <div class="skills">
+                <div class="skill">
+                    <span class="skill-name">WORDPRESS</span>
+                    <div class="bar">
+                        <div class="progress" data-width="50%">
+                    </div>
+                    </div>
+                    <span class="percent">50%</span>
+                </div>
+
+            <div class="skill">
+                <span class="skill-name">JAVASCRIPT</span>
+                <div class="bar">
+                    <div class="progress" data-width="30%"></div>
+                </div>
+                <span class="percent">30%</span>
+            </div>
+
+             <div class="skill">
+    <span class="skill-name">HTML & CSS</span>
+    <div class="bar">
+      <div class="progress" data-width="90%"></div>
+    </div>
+    <span class="percent">90%</span>
+  </div>
+            </div>
+            </div>
+  </section>
+      
+
+  <section id="projects">
+       
+     <h1 class="portfolio">
+            <span class="number">02 </span>PORTFOLIO</h1>
+    <div class="grid">
+      <div class="card">
+        <h3>PROJECT 1</h3>
+      </div>
+      <div class="card">
+        <h3>PROJECT 2</h3> 
+      </div>
+    </div>
+    
+  </section>
+  <section id="contact">
+       <div class="contact-wrapper">
+    <div class="contact-text-side">
+      <h2>CONTACT</h2>
+      <p class="contact-desc">
+        Harika fikirleri beraber hayata geçirelim. Tasarım veya geliştirme süreçleri için bana bir mesaj bırakabilirsiniz.
+      </p>
+      <div class="contact-details">
+        <p>info@mysite.com</p>
+        <p>Tel: 1-800-000-0000</p>
+      </div>
+      </div>
+
+    <div class="contact-form-side">
+      <form>
+        <div class="input-row">
+          <input type="text" placeholder="First name *">
+          <input type="text" placeholder="Last name *">
+        </div>
+        <input type="email" placeholder="Email *">
+        <input type="text" placeholder="Phone">
+        <textarea placeholder="Message"></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+  <footer>
+    <p>© 2026 Rumeysa</p>
+  </footer>
+
+<script>
+
+const bars = document.querySelectorAll('.progress');
+
+function showProgress(){
+  bars.forEach(bar => {
+    const rect = bar.getBoundingClientRect();
+    if(rect.top < window.innerHeight){
+      bar.style.width = bar.dataset.width;
+    }
+  });
+}
+
+window.addEventListener('scroll', showProgress);
+
+</script>
+
+</body>
+</html>
