@@ -272,3 +272,46 @@ footer { background:#0d1117; padding:40px; text-align:center;color: #FFFFFF; fon
     background-color: #fff;
     transform: translateY(-3px);
 }
+
+
+
+
+
+
+
+/* --- TELEFONLAR İÇİN DÜZELTMELER --- */
+@media (max-width: 768px) {
+  
+    /* Boşluk yaratan o kartı düzeltiyoruz */
+    .cardd, .carddd {
+        width: 90% !important; /* Sabit 650px yerine ekranın %90'ı */
+        height: auto !important; /* Sabit yükseklik yerine içerik kadar */
+        top: 0 !important; /* Negatif kaydırmayı (top: -200px) mobilde sıfırla */
+        margin: 20px auto !important; 
+        padding: 40px 20px !important; /* İç boşluğu küçült */
+    }
+
+    /* Giriş kısmındaki yazıları küçült */
+    #home h2 {
+        font-size: 32px !important;
+        line-height: 1.1;
+    }
+
+    /* Projeleri ve İletişimi alt alta getir */
+    .grid, .contact-wrapper {
+        display: flex;
+        flex-direction: column !important; /* Yan yana yerine alt alta */
+        gap: 30px;
+    }
+
+    /* İletişim formundaki isim-soyisim yan yana sığmaz, onları da alt alta al */
+    .input-row {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* Tüm bölümlerdeki aşırı dış boşlukları azalt */
+    section {
+        padding: 60px 20px !important;
+    }
+}
