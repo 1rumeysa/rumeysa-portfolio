@@ -79,7 +79,8 @@ nav span a{
 #about{
  position: relative;
     height: 100vh;
-   
+    margin: 0;
+    padding: 0;
 }
 .professional{
     position: absolute;
@@ -110,8 +111,8 @@ nav span a{
 #projects{
  
   min-height: 100vh;
-  padding-top: 120px;
-  scroll-margin-top: -550px;
+  padding-top: 500px;
+  scroll-margin-top: -340px;
 
  }
  .portfolio{
@@ -131,7 +132,7 @@ nav span a{
 section { padding:40px; text-align:center;}
 .grid { display:flex; justify-content:center; gap:20px; }
 .card { border:1px solid #ccc; padding:80px; width:200px;color: #FFFFFF; }
-footer { background:#0d1117; padding:40px; text-align:center;color: #FFFFFF; font-weight:50;padding-bottom: 60px;}
+footer { background:#0d1117; padding:40px; text-align:center;color: #FFFFFF; font-weight:50;padding-bottom: 60px; ;}
 
 .skills{
     position: absolute;
@@ -193,9 +194,11 @@ footer { background:#0d1117; padding:40px; text-align:center;color: #FFFFFF; fon
     
 }
 #contact{
-    scroll-margin-top: 200px;
+    scroll-margin-top: 50px;
      padding: 100px 5%;
     background-color: #0d1117;
+    position: relative;
+    margin-top:-250px;  
 }
 .contact-wrapper {
     display: flex;
