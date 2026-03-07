@@ -19,7 +19,7 @@ nav span a{
     left: 50px;
     top:12%;
 }
-#home h2{
+#home h2{  
     position: absolute;
     z-index:2;
     left: 50px;
@@ -78,7 +78,7 @@ nav span a{
 }
 #about{
  position: relative;
-min-height: 1300px;
+min-height: auto;
    
 }
 .professional{
