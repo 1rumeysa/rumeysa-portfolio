@@ -111,9 +111,8 @@ nav span a{
 }
 #projects{
  
-  min-height: 100vh;
-  padding-top: 150px;
-  padding-bottom: 50px;
+  min-height: auto;
+   padding: 150px 5% 50px 5%;
   scroll-margin-top: -340px;
 
  }
