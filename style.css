@@ -79,32 +79,26 @@ nav span a{
   
 }
 #about{
- position: relative;
-    height: 1300px;
+    position: relative;
     margin: 0;
     padding: 0;
     scroll-margin-top: 150px;
 }
 .professional{
-    position: absolute;
-    top: 480px;       /* cardın altına gelecek mesafe */
-    left: 50%;
-    transform: translateX(-50%);
+    margin-top: -250px;   
     color: #FFFFFF;
     font-size: 40px;
     font-weight: 1000;
     letter-spacing: 8px;
     word-spacing: 15px;
-    
+    text-align: center;
 }
 .number{
     color: #98a0ac;
 }
 .knowledge{
-     position: absolute;
-    top: 580px;       /* cardın altına gelecek mesafe */
-    left: 50%;
-    transform: translateX(-50%);
+   text-align: center;
+    top: 480px;       /* cardın altına gelecek mesafe */
     color: #FFFFFF;
     font-size: 30px;
     font-weight: 300;
@@ -113,7 +107,7 @@ nav span a{
 }
 #projects{
  
-   padding: 80px 5%;
+   padding: 200px 5% 80px 5%;
   scroll-margin-top: 80px;
 
  }
@@ -137,12 +131,10 @@ section { padding:40px; text-align:center;}
 footer { background:#0d1117; padding:40px; text-align:center;color: #FFFFFF; font-weight:50;padding-bottom: 60px; ;}
 
 .skills{
-    position: absolute;
-    top: 750px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 700px;
-    
+    margin-top: 80px;
+    width:700px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .skill{
