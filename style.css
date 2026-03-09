@@ -52,14 +52,15 @@ nav span a{
 }
 .cardd{
     text-align: center;
-    margin: 0 auto;
+    margin: -150px auto 0 auto; /* üstten yukarı çekiyoruz */
     border:2px solid #324158;
     padding: 220px 160px 100px 160px;
-    width: 500px;
-    position: absolute;
-     top: 80px; /* about'un başladığı yer */
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+     top:auto;
     left: 50%;
-    transform: translate(-50%, -50%); /* yarısı yukarı çıkar → tam iki resim ortası */
+    transform: none;
     box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     background:#324158;
     z-index: 3;
