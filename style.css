@@ -113,6 +113,7 @@ nav span a{
  
   min-height: 100vh;
   padding-top: 150px;
+  padding-bottom: 50px;
   scroll-margin-top: -340px;
 
  }
@@ -196,10 +197,10 @@ footer { background:#0d1117; padding:40px; text-align:center;color: #FFFFFF; fon
 }
 #contact{
     scroll-margin-top: 50px;
-     padding: 100px 5%;
+    padding: 100px 5% 50px 5%; /* üst, sağ, alt, sol */
     background-color: #0d1117;
     position: relative;
-    margin-top:-250px;  
+    margin-top:0;  
 }
 .contact-wrapper {
     display: flex;
