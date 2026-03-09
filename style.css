@@ -33,7 +33,6 @@ nav span a{
   font-size:50px;
   color: #FFFFFF;
   position:relative;
-  min-height: 100vh;
   z-index:2;
   height:100vh;
   width:100%;
@@ -44,7 +43,7 @@ nav span a{
     top: 0;
     left: 0;
     width: 100%;
-    height: 100vh;
+    height: 100%;
     max-height: 100vh;
     object-fit: cover;
     object-position: center;
@@ -114,9 +113,8 @@ nav span a{
 }
 #projects{
  
-  min-height: auto;
-   padding: 150px 5% 200px 5%;
-  scroll-margin-top: -50px;
+   padding: 80px 5%;
+  scroll-margin-top: 80px;
 
  }
  .portfolio{
@@ -192,14 +190,14 @@ footer { background:#0d1117; padding:40px; text-align:center;color: #FFFFFF; fon
     display: block;
     margin: 0 auto; 
     position: relative;
-    top: -200px;
+    top: -80px;
     padding: 100px; 
     height: 450px;
     
 }
 #contact{
     scroll-margin-top: 50px;
-    padding: 100px 5% 50px 5%; /* üst, sağ, alt, sol */
+    padding: 60px 5%;
     background-color: #0d1117;
     position: relative;
     margin-top:0;  
