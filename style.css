@@ -7,7 +7,15 @@ body { font-family:sans-serif;width:100%;overflow-x: hidden; margin:0; padding:0
     #000000 100%     /* Tam karanlık bitiş */
 ); }
 header { background:#324158; padding: 20px;text-align:center; font-size: 12px; }
-nav a { margin:0 10px; text-decoration:none; color: #BEC7D5 }
+nav a { margin:0 10px; text-decoration:none; color: #BEC7D5;
+cursor: none; }
+
+button, 
+.hamburger, 
+input[type="submit"] {
+    cursor: none !important;
+}
+
 nav span a{
     color:chartreuse;
 }
@@ -282,6 +290,49 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+/* Gerçek oku gizle */
+body { cursor: none; }
+
+.cursor {
+  width: 40px; /* Dairenin boyutu */
+    height: 40px;
+    background-color:white; /* Dairenin rengi */
+    border-radius: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%) scale(1); /* Ortalamak için  */
+    pointer-events: none; /* Tıklamayı engellememesi için */
+    z-index: 9999;
+    mix-blend-mode: difference;
+    transition: transform 0.6s ease-in-out;
+}
+
+/* Linklerin üzerine gelince büyümesi için */
+/* Bu sınıfı JS ile ekleyip çıkaracağım*/
+.cursor.grow {
+  transform: translate(-50%, -50%) scale(2.5);
+  background-color:white;
+
+}
+
+#home h2, 
+#home p, 
+.professional, 
+.knowledge, 
+.portfolio, 
+.cardd p {
+    width: fit-content; /* Sadece yazı kadar genişlik al */
+    display: table;    /* Bazı tarayıcılar için alternatif daraltma */
+    margin-left: auto; 
+    margin-right: auto; /* Ortalanmışlarsa bu kalsın */
+}
+
+/* Home kısmındaki yazılar sola yaslıysa margin-left'i 0 yap */
+#home h2, #home p {
+    margin-left: 0;
 }
 
 /* --- MOBİL UYUMLULUK AYARLARI (768px ve altı cihazlar için) --- */

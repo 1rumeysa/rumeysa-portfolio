@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="cursor"></div>
   <header>
     <nav>
         <div class="hamburger" onclick="toggleMenu()">
@@ -142,6 +143,34 @@ document.querySelectorAll('.nav-links a').forEach(link => {
   link.addEventListener('click', () => {
     document.querySelector('.nav-links').classList.remove('active');
   });
+});
+
+const cursor = document.querySelector('.cursor');
+
+window.addEventListener('mousemove', (e) => {
+    // Farenin koordinatlarını div'e aktarıyorum
+    cursor.style.left = `${e.clientX}px`;
+    cursor.style.top = `${e.clientY}px`;
+});
+
+//Büyüme Efekti:
+// Sayfadaki tüm metin ve etkileşimli elemanları seçiyoruz
+const allElements = document.querySelectorAll(`
+  nav a, 
+  #home h2, #home p, 
+  .professional, .knowledge, .portfolio, 
+  .card h3, 
+  .contact-text-side h2, .contact-desc, .contact-details p,
+  button, .skill-name, .percent, .cardd p
+`);
+
+allElements.forEach(el => {
+    el.addEventListener('mouseenter', () => {
+        cursor.classList.add('grow');
+    });
+    el.addEventListener('mouseleave', () => {
+        cursor.classList.remove('grow');
+    });
 });
 </script>
 
