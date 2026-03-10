@@ -2,17 +2,24 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rumeysa Portfolio</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
   <header>
     <nav>
-      <span><a href="#home">HOME</a></span>
+        <div class="hamburger" onlick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="nav-links">
+            <span><a href="#home">HOME</a></span>
       <a href="#about">ABOUT</a>
       <a href="#projects">PROJECTS</a>
       <a href="#contact">CONTACT</a>
+        </div>  
     </nav>
   </header>
     <section id="home">
@@ -125,6 +132,17 @@ function showProgress(){
 
 window.addEventListener('scroll', showProgress);
 
+   function toggleMenu() {
+  const navLinks = document.querySelector('.nav-links');
+  navLinks.classList.toggle('active');
+}
+
+// Linke tıklandığında menü otomatik kapansın
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    document.querySelector('.nav-links').classList.remove('active');
+  });
+});
 </script>
 
 </body>

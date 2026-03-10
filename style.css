@@ -142,17 +142,20 @@ footer { background:#0d1117; padding:40px; text-align:center;color: #FFFFFF; fon
 }
 
 .bar{
-    flex: 1;
     height: 12px;
     background: rgba(255,255,255,0.2);
-    margin: 0 15px;
+    margin: 10px 0;
+    width: 100%;
+    display: flex;
 }
 
 .progress{
-    height: 100%;
     width: 0;
+    height: 100%;
+    min-width: 0;
     background: chartreuse;
     transition: width 1.2s ease;
+    display: block;
 }
 
 .percent{
@@ -258,6 +261,122 @@ footer { background:#0d1117; padding:40px; text-align:center;color: #FFFFFF; fon
 .contact-form-side button:hover {
     background-color: #fff;
     transform: translateY(-3px);
+}
+
+.hamburger{
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+    padding: 10px;
+}
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background-color: chartreuse; /* Çizgilerin rengi */
+  transition: 0.3s;
+}
+
+/* Masaüstü Nav Ayarı */
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* --- MOBİL UYUMLULUK AYARLARI (768px ve altı cihazlar için) --- */
+@media (max-width: 768px) {
+    
+    /* 1. Giriş Bölümü Ayarları */
+    #home {
+        padding: 150px 20px; /* Kenar boşluklarını azalttım */
+        text-align: center;   /* Mobilde merkezde */
+    }
+
+    /* 2. Hakkımda Kartı Ayarları */
+    .cardd {
+        width: 95%;
+        padding: 60px 20px; /* Sabit yüksek paddingleri küçülttüm */
+        margin: 20px auto;
+    }
+
+    /* 3. Yetenekler (Skills) Bölümü */
+    .skills {
+        width: 90%; /* 700px yerine ekrana göre esneklik verdim */
+    }
+    
+    .skill {
+        flex-direction: column; /* Mobilde isim ve bar alt alta gelsin */
+        align-items: flex-start;
+        margin: 30px 0;
+    }
+
+    .skill-name {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    .bar {
+        width: 100%;
+        height: 12px;
+        background-color: rgba(255,255,255,0.2);
+        margin: 10px 0;
+        display: block;
+    }
+
+    /* 4. Portfolyo (Grid) Yapısı */
+    .grid {
+        flex-direction: column; /* Yan yana duran kartlar alt alta */
+        align-items: center;
+    }
+
+    .card {
+        width: 80%; /* Kartlar genişlesin */
+    }
+
+    /* 5. İletişim Formu */
+    .contact-wrapper {
+        flex-direction: column; /* Metin ve form alt alta */
+        gap: 40px;
+    }
+
+    .input-row {
+        flex-direction: column; /* İsim-Soyisim inputları alt alta */
+        gap: 0;
+    }
+
+    /* 6. Yazı Boyutları */
+    .professional, .portfolio {
+        font-size: 28px;
+        letter-spacing: 3px;
+    }
+}
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex; /* Mobilde hamburgeri göster */
+  }
+
+  .nav-links {
+    display: none; /* İlk başta kapalı dursun */
+    flex-direction: column;
+    position: absolute;
+    top: 60px; /* Header yüksekliğine göre ayarla */
+    left: 0;
+    width: 100%;
+    background: #324158;
+    padding: 20px 0;
+    z-index: 1000;
+  }
+
+  /* Menü açıldığında bu sınıfı JS ile ekleyeceğim */
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links a {
+    margin: 15px 0;
+    font-size: 18px;
+  }
 }
 
 
