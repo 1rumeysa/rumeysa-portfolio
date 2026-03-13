@@ -5,9 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rumeysa Portfolio</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <div class="cursor"></div>
+   
   <header>
     <nav>
         <div class="hamburger" onclick="toggleMenu()">
@@ -42,33 +43,40 @@
         <h1 class="professional">
             <span class="number">01</span> PROFESSIONAL</h1>
             <h2 class="knowledge">MY KNOWLEDGE LEVEL IN SOFTWARE</h2>
-            <div class="skills">
-                <div class="skill">
-                    <span class="skill-name">WORDPRESS</span>
-                    <div class="bar">
-                        <div class="progress" data-width="50%">
-                    </div>
-                    </div>
-                    <span class="percent">50%</span>
-                </div>
-
-            <div class="skill">
-                <span class="skill-name">JAVASCRIPT</span>
-                <div class="bar">
-                    <div class="progress" data-width="30%"></div>
-                </div>
-                <span class="percent">30%</span>
-            </div>
-
-             <div class="skill">
-    <span class="skill-name">HTML & CSS</span>
-    <div class="bar">
-      <div class="progress" data-width="90%"></div>
-    </div>
-    <span class="percent">90%</span>
+           
+      <div class="skill-grid">
+  <div class="skill-card">
+    <i class="fab fa-wordpress"></i>
+    <h3>WORDPRESS</h3>
+    <p>Theme & Design</p>
   </div>
-            </div>
-            </div>
+  <div class="skill-card">
+    <i class="fab fa-js"></i>
+    <h3>JAVASCRIPT</h3>
+    <p>Interactions</p>
+  </div>
+  <div class="skill-card">
+    <i class="fab fa-html5"></i>
+    <h3>HTML & CSS</h3>
+    <p>Semantic & Modern</p>
+  </div>
+  <div class="skill-card">
+    <i class="fas fa-mobile-alt"></i>
+    <h3>RESPONSIVE</h3>
+    <p>Mobile First</p>
+  </div>
+  <div class="skill-card">
+    <i class="fab fa-github"></i>
+    <h3>GIT / GITHUB</h3>
+    <p>Version Control</p>
+  </div>
+  <div class="skill-card">
+    <i class="fab fa-figma"></i>
+    <h3>FIGMA</h3>
+    <p>UI/UX Design</p>
+  </div>
+</div>
+
   </section>
       
 
@@ -119,20 +127,6 @@
   </footer>
 
 <script>
-
-const bars = document.querySelectorAll('.progress');
-
-function showProgress(){
-  bars.forEach(bar => {
-    const rect = bar.getBoundingClientRect();
-    if(rect.top < window.innerHeight){
-      bar.style.width = bar.dataset.width;
-    }
-  });
-}
-
-window.addEventListener('scroll', showProgress);
-
    function toggleMenu() {
   const navLinks = document.querySelector('.nav-links');
   navLinks.classList.toggle('active');
@@ -143,34 +137,6 @@ document.querySelectorAll('.nav-links a').forEach(link => {
   link.addEventListener('click', () => {
     document.querySelector('.nav-links').classList.remove('active');
   });
-});
-
-const cursor = document.querySelector('.cursor');
-
-window.addEventListener('mousemove', (e) => {
-    // Farenin koordinatlarını div'e aktarıyorum
-    cursor.style.left = `${e.clientX}px`;
-    cursor.style.top = `${e.clientY}px`;
-});
-
-//Büyüme Efekti:
-// Sayfadaki tüm metin ve etkileşimli elemanları seçiyoruz
-const allElements = document.querySelectorAll(`
-  nav a, 
-  #home h2, #home p, 
-  .professional, .knowledge, .portfolio, 
-  .card h3, 
-  .contact-text-side h2, .contact-desc, .contact-details p,
-  button, .skill-name, .percent, .cardd p
-`);
-
-allElements.forEach(el => {
-    el.addEventListener('mouseenter', () => {
-        cursor.classList.add('grow');
-    });
-    el.addEventListener('mouseleave', () => {
-        cursor.classList.remove('grow');
-    });
 });
 </script>
 

@@ -8,13 +8,8 @@ body { font-family:sans-serif;width:100%;overflow-x: hidden; margin:0; padding:0
 ); }
 header { background:#324158; padding: 20px;text-align:center; font-size: 12px; }
 nav a { margin:0 10px; text-decoration:none; color: #BEC7D5;
-cursor: none; }
+ }
 
-button, 
-.hamburger, 
-input[type="submit"] {
-    cursor: none !important;
-}
 
 nav span a{
     color:chartreuse;
@@ -25,7 +20,7 @@ nav span a{
     margin: 0;
     order:1;
     position: static;
-    margin-top: 100px;
+    margin-top: 120px;
 }
 #home h2{
     font-size: clamp(30px, 8vw, 60px);
@@ -33,6 +28,7 @@ nav span a{
     order: 2;
     margin: 10px 0 0 0;
     position: static;
+    margin-top:50px;
    
 }
 #home{
@@ -50,13 +46,13 @@ nav span a{
   flex-direction:column;
   justify-content:center;
   box-sizing: border-box;
-  
+
 }
 .cardd{
     text-align: center;
     margin: 40px auto; 
     border:2px solid #324158;
-    padding: 220px 160px 100px 160px;
+    padding: 200px 150px 100px 160px;
     width: 90%;
     max-width: 500px;
     position: relative;
@@ -65,6 +61,8 @@ nav span a{
     background:#324158;
     z-index: 3;
     color: #FFFFFF;
+    margin-bottom: 200px;
+    
 }
  .cardd p{
     margin-bottom: 20px;
@@ -81,9 +79,10 @@ nav span a{
 }
 #about{
     position: relative;
-    scroll-margin-top: 150px;
+   
 }
 .professional{
+
     margin-top: 80px;   
     color: #FFFFFF;
     font-size: 40px;
@@ -103,15 +102,17 @@ nav span a{
     font-weight: 300;
     letter-spacing: 5px;
     word-spacing: 5px;
+    margin-bottom: 60px;
 }
 #projects{
  
    padding: 120px 5% 80px 5%;
   scroll-margin-top: 80px;
+  margin-bottom: 100px;
 
  }
  .portfolio{
-  
+
     color: #FFFFFF;
     font-size: 40px;
     font-weight: 1000;
@@ -129,49 +130,6 @@ section { padding:40px 0; text-align:center;}
 .card { border:1px solid #ccc; padding:80px; width:200px;color: #FFFFFF; }
 footer { background:#0d1117; padding:40px; text-align:center;color: #FFFFFF; font-weight:50;padding-bottom: 60px; ;}
 
-.skills{
-    margin-top: 80px;
-    width:700px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.skill{
-    display: flex;
-    align-items: center;
-    margin: 70px 0;
-}
-
-.skill-name{
-    width: 150px;
-    color:#BEC7D5;
-    font-size: 14px;
-    text-align: left;
-}
-
-.bar{
-    height: 12px;
-    background: rgba(255,255,255,0.2);
-    margin: 10px 0;
-    width: 100%;
-    display: flex;
-}
-
-.progress{
-    width: 0;
-    height: 100%;
-    min-width: 0;
-    background: chartreuse;
-    transition: width 1.2s ease;
-    display: block;
-}
-
-.percent{
-    width: 50px;
-    color:#BEC7D5;
-    font-size: 14px;
-    text-align: right;
-}
 
 .carddd{
     text-align: center;
@@ -292,36 +250,7 @@ nav {
   align-items: center;
 }
 
-/* Gerçek oku gizle */
-body { cursor: none; }
 
-.cursor {
-  width: 40px; /* Dairenin boyutu */
-    height: 40px;
-    background-color:white; /* Dairenin rengi */
-    border-radius: 50%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    transform: translate(-50%, -50%) scale(1); /* Ortalamak için  */
-    pointer-events: none; /* Tıklamayı engellememesi için */
-    z-index: 9999;
-    mix-blend-mode: difference;
-    transition: transform 0.6s ease-in-out;
-}
-
-/* Linklerin üzerine gelince büyümesi için */
-/* Bu sınıfı JS ile ekleyip çıkaracağım*/
-.cursor.grow {
-  transform: translate(-50%, -50%) scale(2.5);
-  background-color:white;
-
-}
-
-#home h2, 
-#home p, 
-.professional, 
-.knowledge, 
 .portfolio, 
 .cardd p {
     width: fit-content; /* Sadece yazı kadar genişlik al */
@@ -335,44 +264,67 @@ body { cursor: none; }
     margin-left: 0;
 }
 
+/* Masaüstü ve Genel Kart Tasarımı */
+.skill-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 40px 10%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.skill-card {
+    background: #324158;
+    border: 1px solid rgba(127, 255, 0, 0.1);
+    padding: 25px 15px;
+    border-radius: 15px;
+    transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    color: white;
+}
+
+.skill-card i {
+    font-size: 35px;
+    color: chartreuse;
+    margin-bottom: 15px;
+    
+}
+
+.skill-card h3 {
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin-bottom: 5px;
+}
+
+.skill-card p {
+    color: #BEC7D5;
+    font-size: 11px;
+    opacity:0.8;
+}
+
+/* Kartın Üzerine Gelince (Hover) */
+.skill-card:hover {
+    transform: translateY(-8px);
+    border-color: chartreuse;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    background: #3d4f6b;
+}
+
 /* --- MOBİL UYUMLULUK AYARLARI (768px ve altı cihazlar için) --- */
 @media (max-width: 768px) {
     
     /* 1. Giriş Bölümü Ayarları */
     #home {
-        padding: 150px 20px; /* Kenar boşluklarını azalttım */
+        padding: 170px 20px; /* Kenar boşluklarını azalttım */
         text-align: center;   /* Mobilde merkezde */
     }
 
     /* 2. Hakkımda Kartı Ayarları */
     .cardd {
-        width: 95%;
-        padding: 60px 20px; /* Sabit yüksek paddingleri küçülttüm */
+        width: 80%;
+       padding: 40px 15px; /*paddingleri küçülttüm */
         margin: 20px auto;
-    }
-
-    /* 3. Yetenekler (Skills) Bölümü */
-    .skills {
-        width: 90%; /* 700px yerine ekrana göre esneklik verdim */
-    }
-    
-    .skill {
-        flex-direction: column; /* Mobilde isim ve bar alt alta gelsin */
-        align-items: flex-start;
-        margin: 30px 0;
-    }
-
-    .skill-name {
-        width: 100%;
-        margin-bottom: 5px;
-    }
-
-    .bar {
-        width: 100%;
-        height: 12px;
-        background-color: rgba(255,255,255,0.2);
-        margin: 10px 0;
-        display: block;
     }
 
     /* 4. Portfolyo (Grid) Yapısı */
@@ -382,24 +334,42 @@ body { cursor: none; }
     }
 
     .card {
-        width: 80%; /* Kartlar genişlesin */
+        width: 50%; /* Kartlar genişlesin */
     }
 
     /* 5. İletişim Formu */
     .contact-wrapper {
         flex-direction: column; /* Metin ve form alt alta */
         gap: 40px;
+       
     }
 
     .input-row {
         flex-direction: column; /* İsim-Soyisim inputları alt alta */
         gap: 0;
     }
-
+    
+    .professional{
+        margin-top: 150px !important;
+    }
     /* 6. Yazı Boyutları */
     .professional, .portfolio {
-        font-size: 28px;
-        letter-spacing: 3px;
+         
+        font-size: 24px;         /* Boyutu küçülttük */
+        letter-spacing: 2px;     /* Harf arasını daralttık */
+        word-spacing: 5px;       /* Kelime arasını daralttık */
+        line-height: 1.2;
+        padding: 0 15px;
+    }
+        .knowledge {
+        
+        font-size: 18px;         /* Daha okunaklı bir alt başlık boyutu */
+        letter-spacing: 1px;
+        word-spacing: 2px;
+        margin-top: 30px;
+        margin-bottom:70px;
+        padding: 0 20px;         /* Kenarlara yapışmasını engeller */
+        line-height: 1.4;
     }
 }
 @media (max-width: 768px) {
@@ -428,6 +398,28 @@ body { cursor: none; }
     margin: 15px 0;
     font-size: 18px;
   }
+
+  .skill-grid {
+   grid-template-columns: repeat(2, 1fr) !important; /* Mobilde yan yana 2 kart */
+        gap: 15px !important;
+        padding: 10px !important;
+}
+
+.skill-card {
+    padding: 20px 10px !important;
+        background: #324158;
+        border-radius: 12px;
+        transition: transform 0.2s ease; /* Mobilde daha hızlı tepki */
+}
+.skill-card:active {
+      transform: scale(0.95) !important; /* Dokunma anında hafif küçülme */
+        border-color: chartreuse !important;
+    }
+.skill-card:hover {
+   transform: none !important;
+   box-shadow: none !important;
+}
+
 }
 
 
