@@ -1,3 +1,34 @@
+
+/* --- Custom Scrollbar --- */
+
+/*  Kaydırma çubuğunun genişliği */
+::-webkit-scrollbar {
+    width: 10px;
+}
+/* Arka plan (Track) */
+::-webkit-scrollbar-track {
+    background: #0d1117; 
+}
+
+/*  Hareket eden çubuk (Thumb) */
+::-webkit-scrollbar-thumb {
+    background: chartreuse;
+    border-radius: 10px;
+    /* Çubuğun etrafında boşluk istersen aşağıdaki çizgiyi açabilirsin */
+    /* border: 2px solid #0d1117; */
+}
+/* 4. Mouse ile üzerine gelince (Hover) rengi hafifçe parlasın */
+::-webkit-scrollbar-thumb:hover {
+    background: #a3ff00; /* Biraz daha parlak bir yeşil tonu */
+    box-shadow: 0 0 10px rgba(127, 255, 0, 0.5);
+}
+
+/* Firefox için  */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: chartreuse #0d1117;
+}
+
 html{
   scroll-behavior:smooth; overflow-x: hidden; width: 100%;
 }
@@ -6,10 +37,50 @@ body { font-family:sans-serif;width:100%;overflow-x: hidden; margin:0; padding:0
     #4A5B78 50%,     /* Daha açık ve belirgin orta kısım */
     #000000 100%     /* Tam karanlık bitiş */
 ); }
-header { background:#324158; padding: 20px;text-align:center; font-size: 12px; }
+
+header {
+   font-size: small;
+   background: #324158;
+    padding: 15px 40px; 
+    position: sticky; /* Sayfa kayarken yukarıda kalması için */
+    top: 0;
+    z-index: 1000;
+}
+     
 nav a { margin:0 10px; text-decoration:none; color: #BEC7D5;
  }
 
+.language-switcher {
+    display: flex;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50px;
+    padding: 2px;
+    margin-right: 15px;
+}
+
+.lang-btn {
+  background: none;
+    border: none;
+    color: #BEC7D5;
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    line-height: 1;
+}
+
+.lang-btn.active {
+   background: chartreuse; 
+    color: #000; 
+    box-shadow: 0 2px 8px rgba(127, 255, 0, 0.3);
+}
+
+.lang-btn:hover {
+    color: white;
+}
 
 nav span a{
     color:chartreuse;
@@ -74,13 +145,126 @@ nav span a{
     border: 2px solid chartreuse;
     padding: 18px;
     background-color: #324158;
-    color:#FFFFFF;
-  
+    color:#FFFFFF;    
+}
+
+.download-btn {
+    margin-top: 40px;
+    border: 2px solid chartreuse;
+    padding: 15px 35px;
+    background-color: transparent;
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+    letter-spacing: 2px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    display: inline-block; 
+}
+
+.download-btn:hover {
+    color: #000;
+    background-color: chartreuse;
+    box-shadow: 0 0 20px rgba(127, 255, 0, 0.6);
+    transform: translateY(-5px);
+}
+
+/* Tıklandığında (Active) Efekti */
+.download-btn:active {
+    transform: translateY(-2px) scale(0.95);
 }
 #about{
     position: relative;
    
 }
+
+/* Eğitim & Sertifika Bölümü Genel Ayarları */
+.education-section {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 0 10%;
+    margin-bottom: 80px;
+    margin-top: -100px; /* Hakkımda kartına biraz daha yaklaştırmak için */
+    position: relative;
+    z-index: 4;
+}
+
+.edu-card {
+    background: rgba(50, 65, 88, 0.8);
+    border-left: 4px solid chartreuse;
+    padding: 30px;
+    flex: 1;
+    max-width: 450px;
+    text-align: left;
+    color: white;
+    border-radius: 0 15px 15px 0;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    transition: all 0.4s ease;
+    cursor:default;
+}
+
+.edu-card span {
+    display: block;
+    margin-top: 10px;
+    font-size: 12px;
+    color: chartreuse;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.edu-card:hover {
+    transform: translateX(10px); 
+    background: rgba(60, 75, 100, 1); 
+    box-shadow: -5px 15px 30px rgba(127, 255, 0, 0.2); /* Yeşilimsi bir gölge */
+    border-left-width: 8px;
+}
+
+.edu-card i {
+    font-size: 30px;
+    color: chartreuse;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.edu-card h3 {
+    letter-spacing: 3px;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.edu-card p, .edu-card li {
+    color: #BEC7D5;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.edu-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.edu-card ul li::before {
+    content: "•";
+    color: chartreuse;
+    font-weight: bold;
+    display: inline-block; 
+    width: 1em;
+}
+
+.cert-link {
+    color: #BEC7D5;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.cert-link:hover {
+    color: chartreuse; 
+    transform: translateX(5px); 
+}
+
 .professional{
 
     margin-top: 80px;   
@@ -128,7 +312,15 @@ nav span a{
 section { padding:40px 0; text-align:center;}
 .grid { display:flex; justify-content:center; gap:20px; }
 .card { border:1px solid #ccc; padding:80px; width:200px;color: #FFFFFF; }
-footer { background:#0d1117; padding:40px; text-align:center;color: #FFFFFF; font-weight:50;padding-bottom: 60px; ;}
+footer {
+    background: #161b22; 
+    padding: 30px 0;
+    text-align: center;
+    color: #8b949e; 
+    font-size: 13px;
+    border-top: 1px solid rgba(255, 255, 255, 0.05); 
+    width: 100%;
+    }
 
 
 .carddd{
@@ -148,93 +340,66 @@ footer { background:#0d1117; padding:40px; text-align:center;color: #FFFFFF; fon
     
 }
 #contact{
-    scroll-margin-top: 50px;
-    padding: 60px 5%;
+  scroll-margin-top: 50px;
+    padding: 60px 5% 40px 5%; 
     background-color: #0d1117;
-    position: relative;
-    margin-top:0;  
+    text-align: center;
 }
-.contact-wrapper {
-    display: flex;
-    justify-content: space-between;
-    max-width: 1100px;
+ .contact-wrapper {
+    max-width: 800px;
     margin: 0 auto;
-    gap: 60px;
-    
 }
 
 .contact-text-side {
-    flex: 1;
-    text-align: left;
     color: white;
 }
 
 .contact-text-side h2 {
     font-size: 32px;
     font-weight: 300; 
-    letter-spacing: 2px;
-    margin-bottom: 30px;
+    letter-spacing: 5px; /* Daha modern bir hava */
+    margin-bottom: 40px;
+    color: white;
 }
-
 .contact-desc {
     font-size: 16px;
-    line-height: 1.6;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     color: #BEC7D5;
 }
-
-.contact-form-side {
-    flex: 1.2;
-}
-
-/* Giriş Alanları (İnputlar) */
-.contact-form-side input, 
-.contact-form-side textarea {
-    width: 100%;
-    background: transparent;
-    border: none;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.3); /* Sadece alt çizgi */
-    color: white;
-    padding: 12px 0;
-    margin-bottom: 25px;
-    outline: none;
-    font-family: inherit;
-}
-
-.contact-form-side input:focus {
-    border-bottom: 1px solid chartreuse; /* Odaklanınca yeşil olur */
-}
-
-/* Yan yana duran inputlar için */
-.input-row {
+.social-links-big {
     display: flex;
-    gap: 20px;
+    justify-content: center;
+    gap: 30px; /* İkonlar arası boşluk */
+    margin-top: 20px;
 }
 
-/* Gönder Butonu */
-.contact-form-side button {
-    background-color: chartreuse;
-    color: black;
-    border: none;
-    padding: 12px 45px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: 0.3s;
-    margin-top: 10px;
-   
+.social-links-big a {
+    text-decoration: none;
+    font-size: 45px; 
+    transition: all 0.3s ease;
 }
 
-.contact-form-side button:hover {
-    background-color: #fff;
-    transform: translateY(-3px);
+/* İkonlara özel renkler */
+.fa-envelope {
+    color: #ea4335; /* Gmail Kırmızısı */
 }
+
+.fa-linkedin {
+    color: #0077b5; /* LinkedIn Mavisi */
+}
+
+.fa-github {
+    color: #ffffff; /* GitHub Beyazı (Koyu temada daha iyi durur) */
+}
+
+.social-links-big a:hover {
+    transform: scale(1.2);
+    filter: brightness(1.2); 
+}
+
 
 .hamburger{
-    display: none;
-    cursor: pointer;
-    flex-direction: column;
-    gap: 5px;
-    padding: 10px;
+  display: none;
 }
 .hamburger div {
   width: 25px;
@@ -246,8 +411,18 @@ footer { background:#0d1117; padding:40px; text-align:center;color: #FFFFFF; fon
 /* Masaüstü Nav Ayarı */
 nav {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  padding: 1200px;
+  margin: 0 auto;
+  padding: 0;
+}
+.nav-links {
+    display: flex;
+    gap: 30px;
+    position: absolute; /* Header içinde bağımsız hareket etsin */
+    left: 50%;
+    transform: translateX(-50%); /* Tam matematiksel merkez */
 }
 
 
@@ -314,6 +489,13 @@ nav {
 /* --- MOBİL UYUMLULUK AYARLARI (768px ve altı cihazlar için) --- */
 @media (max-width: 768px) {
     
+.language-switcher {
+       order: 2; 
+        margin-left: auto;
+        margin-right: 0;
+    
+    }
+
     /* 1. Giriş Bölümü Ayarları */
     #home {
         padding: 170px 20px; /* Kenar boşluklarını azalttım */
@@ -337,56 +519,62 @@ nav {
         width: 50%; /* Kartlar genişlesin */
     }
 
-    /* 5. İletişim Formu */
-    .contact-wrapper {
-        flex-direction: column; /* Metin ve form alt alta */
-        gap: 40px;
-       
-    }
-
-    .input-row {
-        flex-direction: column; /* İsim-Soyisim inputları alt alta */
-        gap: 0;
-    }
-    
     .professional{
         margin-top: 150px !important;
     }
     /* 6. Yazı Boyutları */
     .professional, .portfolio {
          
-        font-size: 24px;         /* Boyutu küçülttük */
-        letter-spacing: 2px;     /* Harf arasını daralttık */
-        word-spacing: 5px;       /* Kelime arasını daralttık */
+        font-size: 24px;        
+        letter-spacing: 2px;     
+        word-spacing: 5px;      
         line-height: 1.2;
         padding: 0 15px;
     }
         .knowledge {
         
-        font-size: 18px;         /* Daha okunaklı bir alt başlık boyutu */
+        font-size: 18px;     
         letter-spacing: 1px;
         word-spacing: 2px;
         margin-top: 30px;
         margin-bottom:70px;
-        padding: 0 20px;         /* Kenarlara yapışmasını engeller */
+        padding: 0 20px;       
         line-height: 1.4;
     }
 }
 @media (max-width: 768px) {
   .hamburger {
-    display: flex; /* Mobilde hamburgeri göster */
+    display: flex !important; 
+        flex-direction: column;
+        gap: 5px;
+        cursor: pointer;
+        order: 1; /* Sola yaslar */
+        z-index: 1001;
   }
+  .hamburger div {
+        width: 25px;
+        height: 3px;
+        background-color: chartreuse !important;
+        display: block !important;
+    }
+
+    nav {
+        padding: 10px 0; 
+    }
 
   .nav-links {
-    display: none; /* İlk başta kapalı dursun */
+   display: none; 
     flex-direction: column;
     position: absolute;
-    top: 60px; /* Header yüksekliğine göre ayarla */
+    top: 100%; /* Header'ın hemen altına yapışsın */
     left: 0;
     width: 100%;
     background: #324158;
     padding: 20px 0;
     z-index: 1000;
+    /* Masaüstünden kalan ortalama kodlarını sıfırlıyoruz: */
+    transform: none !important; 
+    text-align: center;
   }
 
   /* Menü açıldığında bu sınıfı JS ile ekleyeceğim */
@@ -399,10 +587,30 @@ nav {
     font-size: 18px;
   }
 
+  .education-section {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 20px;
+        padding: 0 50px;
+    }
+    
+    .edu-card {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+    .edu-card:hover {
+        transform: none; /* Mobilde yana kayma bazen ekranı bozar */
+    }
+    
+    .edu-card:active {
+        transform: scale(0.98); /* Dokununca hafifçe küçülsün */
+        background: rgba(74, 91, 120, 1);
+    }
+
   .skill-grid {
    grid-template-columns: repeat(2, 1fr) !important; /* Mobilde yan yana 2 kart */
         gap: 15px !important;
-        padding: 10px !important;
+        padding: 20px !important;
 }
 
 .skill-card {
@@ -420,6 +628,30 @@ nav {
    box-shadow: none !important;
 }
 
+/* Bu bloğu @media (max-width: 768px) içine, diğerlerinin yanına ekle */
+
+#contact {
+    padding: 40px 5%; /* Üst ve alt boşluğu mobilde iyice daralttık */
+}
+
+.contact-text-side h2 {
+    font-size: 22px; 
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+}
+
+.contact-desc {
+    font-size: 14px;
+    margin-bottom: 25px;
+}
+
+.social-links-big {
+    gap: 20px; 
+}
+
+.social-links-big a {
+    font-size: 35px;
+}
 }
 
 

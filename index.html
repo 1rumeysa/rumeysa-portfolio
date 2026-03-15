@@ -17,63 +17,89 @@
             <div></div>
         </div>
         <div class="nav-links">
-            <span><a href="#home">HOME</a></span>
-      <a href="#about">ABOUT</a>
-      <a href="#projects">PROJECTS</a>
-      <a href="#contact">CONTACT</a>
-        </div>  
+          <span><a href="#home" data-key="nav-home">HOME</a></span>
+    <a href="#about" data-key="nav-about">ABOUT</a>
+    <a href="#projects" data-key="nav-projects">PROJECTS</a>
+    <a href="#contact" data-key="nav-contact">CONTACT</a> 
+        </div> 
+
+        <div class="language-switcher">
+    <button onclick="setLanguage('tr')" class="lang-btn" id="btn-tr">TR</button>
+    <button onclick="setLanguage('en')" class="lang-btn active" id="btn-en">EN</button>
+</div>
     </nav>
   </header>
     <section id="home">
-         <h2>I <span style="color: chartreuse;">'</span> M <br>
-        RUMEYSA <br>
-        İHTİYAR.</h2>
-       <span><p>UX/UI DESIGNER & WEB</p></span>
+        <h2 data-key="home-title">I <span style="color: chartreuse;">'</span> M <br> RUMEYSA <br> İHTİYAR.</h2>
+    <span><p data-key="home-subtitle">UX/UI DESIGNER & WEB</p></span>
       
     </section>
   <section id="about">
     
         <div class="cardd">
-       <p>HELLO, I'M RUMEYSA İHTİYAR. I WORK İN UI/UX DESİGN AND WEB DEVELOPMENT. I ENJOY CREATİNG USER-CENTERED DESİGNS AND DEVELOPİNG MODERN, FUNCTİONAL WEB İNTERFACES. WİTH THE EXPERİENCE I’VE GAİNED FROM VARİOUS PROJECTS, I PROVİDE SOLUTİONS THAT COMBİNE AESTHETİCS AND USABİLİTY. FEEL FREE TO REACH OUT TO ME FOR ANY WEB OR DESİGN NEEDS.</p>
+       <p data-key="about-description">HELLO, I'M RUMEYSA İHTİYAR. I WORK İN UI/UX DESİGN AND WEB DEVELOPMENT. I ENJOY CREATİNG USER-CENTERED DESİGNS AND DEVELOPİNG MODERN, FUNCTİONAL WEB İNTERFACES. WİTH THE EXPERİENCE I’VE GAİNED FROM VARİOUS PROJECTS, I PROVİDE SOLUTİONS THAT COMBİNE AESTHETİCS AND USABİLİTY. FEEL FREE TO REACH OUT TO ME FOR ANY WEB OR DESİGN NEEDS.</p>
 
-       <a href="">
-        <button>DOWNLOAD CV</button>
-       </a>
+           <a href="RumeysaaCv.pdf" target="_blank" style="text-decoration: none;">
+    <button class="download-btn" data-key="view-cv">VIEW CV</button>
+</a>
       </div>
-        <h1 class="professional">
-            <span class="number">01</span> PROFESSIONAL</h1>
-            <h2 class="knowledge">MY KNOWLEDGE LEVEL IN SOFTWARE</h2>
+<div class="education-section">
+    <div class="edu-card">
+        <i class="fas fa-graduation-cap"></i>
+        <h3 data-key="edu-title">EDUCATION</h3>
+       <p><strong>Işık University</strong></p>
+    <p data-key="edu-dept">Computer Programming</p>
+    <span data-key="edu-grad">Graduation: June 2025</span>
+    </div>
+    
+    <div class="edu-card">
+        <i class="fas fa-certificate"></i>
+        <h3 data-key="cert-title">CERTIFICATES</h3>
+       <ul>
+        <li>
+            <a href="excel_sertifika.pdf" target="_blank" class="cert-link" data-key="cert-excel">
+                Advanced Excel Certificate <i class="fas fa-external-link-alt" style="font-size: 10px;"></i>
+            </a>
+        </li>
+    </ul>
+    </div>
+</div>
+
+      <h1 class="professional">
+    <span class="number">01</span> <span data-key="prof-title">PROFESSIONAL</span>
+         </h1>
+            <h2 class="knowledge" data-key="knowledge-title">MY KNOWLEDGE LEVEL IN SOFTWARE</h2>
            
       <div class="skill-grid">
   <div class="skill-card">
     <i class="fab fa-wordpress"></i>
     <h3>WORDPRESS</h3>
-    <p>Theme & Design</p>
+    <p data-key="skill-wp">Theme & Design</p>
   </div>
   <div class="skill-card">
     <i class="fab fa-js"></i>
     <h3>JAVASCRIPT</h3>
-    <p>Interactions</p>
+    <p data-key="skill-js">Interactions</p>
   </div>
   <div class="skill-card">
     <i class="fab fa-html5"></i>
     <h3>HTML & CSS</h3>
-    <p>Semantic & Modern</p>
+    <p data-key="skill-html">Semantic & Modern</p>
   </div>
   <div class="skill-card">
     <i class="fas fa-mobile-alt"></i>
     <h3>RESPONSIVE</h3>
-    <p>Mobile First</p>
+    <p data-key="skill-resp">Mobile First</p>
   </div>
   <div class="skill-card">
     <i class="fab fa-github"></i>
     <h3>GIT / GITHUB</h3>
-    <p>Version Control</p>
+    <p data-key="skill-git">Version Control</p>
   </div>
   <div class="skill-card">
     <i class="fab fa-figma"></i>
     <h3>FIGMA</h3>
-    <p>UI/UX Design</p>
+    <p data-key="skill-figma">UI/UX Design</p>
   </div>
 </div>
 
@@ -82,51 +108,122 @@
 
   <section id="projects">
        
-     <h1 class="portfolio">
-            <span class="number">02 </span>PORTFOLIO</h1>
+    <h1 class="portfolio"><span class="number">02 </span><span data-key="port-title">PORTFOLIO</span></h1>
     <div class="grid">
       <div class="card">
-        <h3>PROJECT 1</h3>
+        <h3 data-key="proj-1">PROJECT 1</h3>
       </div>
       <div class="card">
-        <h3>PROJECT 2</h3> 
+        <h3 data-key="proj-2">PROJECT 2</h3> 
       </div>
     </div>
     
   </section>
+     
   <section id="contact">
-       <div class="contact-wrapper">
-    <div class="contact-text-side">
-      <h2>CONTACT</h2>
-      <p class="contact-desc">
-        Harika fikirleri beraber hayata geçirelim. Tasarım veya geliştirme süreçleri için bana bir mesaj bırakabilirsiniz.
-      </p>
-      <div class="contact-details">
-        <p>info@mysite.com</p>
-        <p>Tel: 1-800-000-0000</p>
-      </div>
-      </div>
-
-    <div class="contact-form-side">
-      <form>
-        <div class="input-row">
-          <input type="text" placeholder="First name *">
-          <input type="text" placeholder="Last name *">
+    <div class="contact-wrapper" style="justify-content: center; text-align: center;">
+        <div class="contact-text-side" style="text-align: center;">
+            <h2 data-key="contact-title">LET'S CONNECT</h2>
+            <p class="contact-desc" data-key="contact-desc">
+                Let’s bring great ideas to life together. You can reach me through the channels below.
+            </p>
+            <div class="social-links-big">
+                <a href="mailto:rumeysaihtiyar@gmail.com" title="Email Me">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/rumeysa-ihtiyar-80b793295/" target="_blank" title="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://github.com/1rumeysa" target="_blank" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+            </div>
         </div>
-        <input type="email" placeholder="Email *">
-        <input type="text" placeholder="Phone">
-        <textarea placeholder="Message"></textarea>
-        <button type="submit">Send</button>
-      </form>
     </div>
-  </div>
 </section>
 
   <footer>
-    <p>© 2026 Rumeysa</p>
+    <p>© 2026 Rumeysa İhtiyar. Tüm hakları saklıdır.</p>
   </footer>
 
 <script>
+
+const translations = {
+    tr: {
+        "skill-wp": "Tema & Tasarım",
+        "prof-title": "PROFESYONEL",
+        "edu-dept": "Bilgisayar Programcılığı",
+        "edu-grad": "Mezuniyet: Haziran 2025",
+        "cert-title": "SERTİFİKALAR",
+        "cert-excel": "İleri Seviye Excel Sertifikası",
+        "port-title": "PORTFOLYO",
+        "proj-1": "PROJE 1",
+        "proj-2": "PROJE 2",
+        "skill-js": "Etkileşimler",
+        "skill-html": "Semantik & Modern",
+        "skill-resp": "Önce Mobil",
+        "skill-git": "Versiyon Kontrolü",
+        "skill-figma": "UI/UX Tasarım",
+        "nav-home": "ANASAYFA",
+        "nav-about": "HAKKIMDA",
+        "nav-projects": "PROJELER",
+        "nav-contact": "İLETİŞİM",
+        "home-title": "BEN <br> RUMEYSA <br> İHTİYAR.",
+        "home-subtitle": "UX/UI TASARIMCI & WEB",
+        "about-description": "MERHABA, BEN RUMEYSA İHTİYAR. UI/UX TASARIM VE WEB GELİŞTİRME ÜZERİNE ÇALIŞIYORUM. KULLANICI ODAKLI TASARIMLAR OLUŞTURMAKTAN VE MODERN, FONKSİYONEL WEB ARAYÜZLERİ GELİŞTİRMEKTEN KEYİF ALIYORUM.",
+        "view-cv": "CV'Yİ GÖRÜNTÜLE",
+        "edu-title": "EĞİTİM",
+        "knowledge-title": "YAZILIM BİLGİ SEVİYEM",
+        "contact-title": "İLETİŞİME GEÇELİM",
+        "contact-desc": "Harika fikirleri beraber hayata geçirelim. Bana aşağıdaki kanallardan ulaşabilirsiniz."
+    },
+    en: {
+        "skill-wp": "Theme & Design",
+        "prof-title": "PROFESSIONAL",
+        "edu-dept": "Computer Programming",
+        "edu-grad": "Graduation: June 2025",
+        "cert-title": "CERTIFICATES",
+        "cert-excel": "Advanced Excel Certificate",
+        "port-title": "PORTFOLIO",
+        "proj-1": "PROJECT 1",
+        "proj-2": "PROJECT 2",
+        "skill-js": "Interactions",
+        "skill-html": "Semantic & Modern",
+        "skill-resp": "Mobile First",
+        "skill-git": "Version Control",
+        "skill-figma": "UI/UX Design",
+        "nav-home": "HOME",
+        "nav-about": "ABOUT",
+        "nav-projects": "PROJECTS",
+        "nav-contact": "CONTACT",
+        "home-title": "I ' M <br> RUMEYSA <br> İHTİYAR.",
+        "home-subtitle": "UX/UI DESIGNER & WEB",
+        "about-description": "HELLO, I'M RUMEYSA İHTİYAR. I WORK IN UI/UX DESIGN AND WEB DEVELOPMENT. I ENJOY CREATING USER-CENTERED DESIGNS AND DEVELOPING MODERN, FUNCTIONAL WEB INTERFACES.",
+        "view-cv": "VIEW CV",
+        "edu-title": "EDUCATION",
+        "knowledge-title": "MY KNOWLEDGE LEVEL IN SOFTWARE",
+        "contact-title": "LET'S CONNECT",
+        "contact-desc": "Let’s bring great ideas to life together. You can reach me through the channels below."
+    }};
+
+// Dil Değiştirme Fonksiyonu:
+function setLanguage(lang) {
+    document.querySelectorAll("[data-key]").forEach(el => {
+        const key = el.getAttribute("data-key");
+        if (translations[lang][key]) {
+            el.innerHTML = translations[lang][key];
+        }
+    });
+     document.getElementById("btn-tr").classList.toggle("active", lang === 'tr');
+    document.getElementById("btn-en").classList.toggle("active", lang === 'en');
+     localStorage.setItem("selectedLang", lang);
+}
+ document.addEventListener("DOMContentLoaded", () => {
+    setLanguage('en');
+    const savedLang = localStorage.getItem("selectedLang") || 'en';
+    setLanguage(savedLang);
+});
+    
    function toggleMenu() {
   const navLinks = document.querySelector('.nav-links');
   navLinks.classList.toggle('active');
@@ -138,6 +235,7 @@ document.querySelectorAll('.nav-links a').forEach(link => {
     document.querySelector('.nav-links').classList.remove('active');
   });
 });
+
 </script>
 
 </body>
