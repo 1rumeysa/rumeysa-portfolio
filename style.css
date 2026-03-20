@@ -103,22 +103,48 @@ nav span a{
    
 }
 #home{
-  text-align:left;
-  padding: 300px 100px;
-  padding-top: 40px;
-  margin-left: 0%;
-  font-family: 'Poppins', sans-serif;
-  font-size:50px;
-  color: #FFFFFF;
-  position:relative;
-  width:100%;
-   overflow: hidden; /* taşan kısımları gizler */
-   display:flex;
-  flex-direction:column;
-  justify-content:center;
-  box-sizing: border-box;
+  padding: 100px 5%; /* Kenarlardan %5 boşluk bırakır */
+    min-height: 85vh; /* Sayfanın büyük kısmını kaplar */
+    display: flex;
+    align-items: center; /* Dikeyde ortalar */
+    justify-content: flex-start; /* Yatayda soldan başlar */
+    font-family: 'Poppins', sans-serif;
+    color: #FFFFFF;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    box-sizing: border-box;
 
 }
+/* İsmini ve Logonu Yan Yana Getiren Kutu */
+.name-logo-wrapper {
+    display: flex;
+    align-items: center; /* İsim ve logoyu aynı hizada tutar */
+    gap: 500px; /* İsim ile logo arasındaki mesafe */
+    justify-content: flex-start;
+   width: 100%;
+}
+
+/* Yazı Tarafı (İsim ve Alt Başlık) */
+.text-side {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+/* Logo İçin Özel Ayar */
+.home-logo {
+    width: 200px; /* Logonun büyüklüğü */
+    height: auto;
+    animation: float 4s ease-in-out infinite;
+}
+
+/* Logonun Yüzme Animasyonu */
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
 .cardd{
     text-align: center;
     margin: 40px auto; 
@@ -133,7 +159,20 @@ nav span a{
     z-index: 3;
     color: #FFFFFF;
     margin-bottom: 200px;
+    overflow: hidden;
     
+}
+.cardd::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    background: linear-gradient(135deg, rgba(127, 255, 0, 0.3) 0%, rgba(127, 255, 0, 0) 60%);
+    filter: blur(10px);
+    z-index: -1;
+    opacity: 0.5;
 }
  .cardd p{
     margin-bottom: 20px;
@@ -498,8 +537,40 @@ nav {
 
     /* 1. Giriş Bölümü Ayarları */
     #home {
-        padding: 170px 20px; /* Kenar boşluklarını azalttım */
-        text-align: center;   /* Mobilde merkezde */
+   padding: 80px 20px 40px 20px !important; /* Üstten ve alttan daha fazla boşluk */
+        min-height: 100vh; /* Ekranın tamamını kaplasın ki öğeler yayılsın */
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* Öğeleri dikeyde merkeze yayar */
+    }
+    #home h2{
+        font-size: 32px; 
+        line-height: 1.2;
+        margin-top: 15px;
+    }
+
+    #home p {
+       font-size: 14px;
+        letter-spacing: 2px;
+        margin-bottom: 10px;
+    }
+
+    .name-logo-wrapper{
+        flex-direction: column; /* Önce Logo, sonra Yazı */
+        gap: 20px; /* Logo ile isim arasındaki mesafe */
+        align-items: center;
+        text-align: center;
+        width: 100%;
+        margin-bottom: 60px;
+    }
+    .home-logo {
+        order: -1; /* Logoyu her şeyin en üstüne taşır */
+        width: 140px; /* Mobilde çok devasa durmaması için küçülttük */
+        margin-bottom: 20px;
+    }
+    .text-side {
+        align-items: center; /* Yazıları merkeze hizalar */
+        text-align: center;
     }
 
     /* 2. Hakkımda Kartı Ayarları */
